@@ -17,6 +17,13 @@ type URL struct {
 var hasSchemePattern = regexp.MustCompile("^[^:]+://")
 var scpLikeURLPattern = regexp.MustCompile("^([^@]+)@?([^:]+):/?(.+)$")
 
+func trimPrefix(path string) string {
+	if strings.HasPrefix(path, "/") {
+		return strings.TrimLeft(path, "/")
+	}
+	return path
+}
+
 // ParseURL will parse giving url into `git.URL` structure
 func ParseURL(rawurl string) (*URL, error) {
 	if !hasSchemePattern.MatchString(rawurl) && scpLikeURLPattern.MatchString(rawurl) {
@@ -29,7 +36,7 @@ func ParseURL(rawurl string) (*URL, error) {
 			Protocol: "ssh",
 			Host:     host,
 			Owner:    user,
-			RepoPath: path,
+			RepoPath: trimPrefix(path),
 		}, nil
 	}
 
@@ -46,7 +53,7 @@ func ParseURL(rawurl string) (*URL, error) {
 		Protocol: parsed.Scheme,
 		Host:     parsed.Host,
 		Owner:    owner,
-		RepoPath: parsed.EscapedPath(),
+		RepoPath: trimPrefix(parsed.EscapedPath()),
 	}, nil
 }
 

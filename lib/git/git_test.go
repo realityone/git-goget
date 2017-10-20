@@ -27,8 +27,9 @@ func TestParseGitURL(t *testing.T) {
 			t.Error(err)
 			continue
 		}
-		if parsedurl == giturl {
+		if *parsedurl != *giturl {
 			t.Errorf("parsed url %v is not equal to defined %v\n", parsedurl, giturl)
+			continue
 		}
 	}
 }

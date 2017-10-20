@@ -4,8 +4,6 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
-
-	"github.com/realityone/git-goget/lib/git"
 )
 
 func gopath() []string {
@@ -20,10 +18,4 @@ func gopath() []string {
 func main() {
 	gopath := gopath()
 	fmt.Printf("%v\n", gopath)
-
-	url, err := git.ParseURL("git@github.com:realityone/git-goget.git")
-	if err != nil {
-		panic(err)
-	}
-	fmt.Printf("%v\n", url)
 }
