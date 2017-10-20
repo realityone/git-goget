@@ -19,4 +19,4 @@ Using `git goget` with any valid git remote url.
 ## License
 
 git-goget is licensed under the MIT License - see the 
-[LICENSE](https://github.com/realityone/git-goget/blob/master/LICENSE) file for details
+[LICENSE](https://github.com/realityone/git-goget/blob/master/LICENSE) file for details.
