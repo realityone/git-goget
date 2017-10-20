@@ -9,7 +9,9 @@ The missing feature in `go get`.
 
 ## Usage
 
-Using `git goget` with any valid git remote url.
+`git-goget` is working as a git plugin.
+
+Using `git goget` with any valid git urls.
 
 ```shell
 # git goget git@github.com:realityone/git-goget.git
