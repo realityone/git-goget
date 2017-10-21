@@ -15,7 +15,7 @@ Using `git goget` with any valid git urls.
 
 ```shell
 git goget git@github.com:astaxie/beego.git
-git goget https://github.com/astaxie/beego.git
+git goget https://github.com/pingcap/tidb.git
 ```
 
 ## License
