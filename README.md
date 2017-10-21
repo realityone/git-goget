@@ -4,7 +4,7 @@ The missing feature in `go get`.
 ## Installation
 
 ```shell
-# go install github.com/realityone/git-goget
+go get github.com/realityone/git-goget
 ```
 
 ## Usage
@@ -14,8 +14,8 @@ The missing feature in `go get`.
 Using `git goget` with any valid git urls.
 
 ```shell
-# git goget git@github.com:realityone/git-goget.git
-# git goget https://github.com/realityone/git-goget.git
+git goget git@github.com:realityone/git-goget.git
+git goget https://github.com/realityone/git-goget.git
 ```
 
 ## License
