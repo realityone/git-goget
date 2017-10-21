@@ -14,8 +14,8 @@ go get github.com/realityone/git-goget
 Using `git goget` with any valid git urls.
 
 ```shell
-git goget git@github.com:realityone/git-goget.git
-git goget https://github.com/realityone/git-goget.git
+git goget git@github.com:astaxie/beego.git
+git goget https://github.com/astaxie/beego.git
 ```
 
 ## License
