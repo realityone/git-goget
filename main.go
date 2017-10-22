@@ -8,7 +8,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/realityone/git-goget/lib/git"
+	"github.com/realityone/git-goget/utils/git"
 )
 
 func gopath() []string {
