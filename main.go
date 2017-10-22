@@ -43,8 +43,8 @@ func fetchRepo(rawurl, gopath string, requireUpdate bool) {
 
 	clone := func() {
 		cmd := exec.Command("sh", "-c", fmt.Sprintf(`
-			git clone %s
-			`, path))
+			git clone %s %s
+			`, rawurl, path))
 		cmd.Stdout = os.Stdout
 		cmd.Stderr = os.Stderr
 		if err := cmd.Run(); err != nil {
