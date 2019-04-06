@@ -43,8 +43,10 @@ func fetchRepo(rawurl, gopath string, requireUpdate bool) {
 
 	clone := func() {
 		cmd := exec.Command("sh", "-c", fmt.Sprintf(`
-			git clone %s %s
-			`, rawurl, path))
+			git clone %s %s && \
+			cd %s && \
+			go get -v ./...
+			`, rawurl, path, path))
 		cmd.Stdout = os.Stdout
 		cmd.Stderr = os.Stderr
 		if err := cmd.Run(); err != nil {
@@ -58,6 +60,7 @@ func fetchRepo(rawurl, gopath string, requireUpdate bool) {
 			cd %s && \
 			git pull && \
 			git reset --hard HEAD
+			go get -v ./...
 			`, path))
 		cmd.Stdout = os.Stdout
 		cmd.Stderr = os.Stderr
